@@ -11,14 +11,21 @@ int main(int argc, char** argv[]){
     float binWidth = 1/(double)MBIN; //BIN_WIDTH
     float randomNumberArray[N_EVENT - 1] = {0};
     int binArray[MBIN-1] = {0};
+    FILE *filePointer;
+
 
 //Generating random numbers
     for (int i=0; i<N_EVENT;i++){
-        randomNumberArray[i] = rand()/(double)RAND_MAX;
-        //printf("%d", randomNumberArray[i]);
+        randomNumberArray[i] = rand()/(float)RAND_MAX;
+        printf("%f", randomNumberArray[i]);
         binArray[binSorter(randomNumberArray[i])] += 1;
+        filePointer = fopen("random", "a+");
+        fwrite(&randomNumberArray[i], sizeof(float), 1, filePointer);
+        fprintf(filePointer,"\n");
+        fclose(filePointer);
     }
 
+    printf("%ld\n", sizeof(randomNumberArray));
     for(int i =0; i<MBIN; i++){
       printf("Bin # %d has %d \n", i, binArray[i]);
     }
