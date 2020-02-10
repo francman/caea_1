@@ -12,4 +12,4 @@ probability.o : probability.c
 	$(CC) $(CFLAGS) -c probability.c
 
 clean :
-	rm histogram probability.o *.txt
+	rm histogram *.o *.dat *.png
