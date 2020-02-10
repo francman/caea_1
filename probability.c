@@ -9,7 +9,6 @@ int main(int argc, char ** argv){
 
     //float binWidth = 1/(double)MBIN; //BIN_WIDTH
     float randomNumberArray[N_EVENT - 1] = {0};
-    int binArray[MBIN-1] = {0};
     FILE *filePointer;
 
     //Opening file for storing random numbers
