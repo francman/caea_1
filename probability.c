@@ -12,6 +12,7 @@ int main(int argc, char ** argv){
     //float binWidth = 1/(double)MBIN; //BIN_WIDTH
     float randomNumberArray[N_EVENT - 1] = {0};
     float binArray[MBIN-1] = {0};
+    float pdf=0;
     FILE *filePointer;
 
     //Opening file for storing random numbers
@@ -36,8 +37,16 @@ int main(int argc, char ** argv){
     }
     fclose(filePointer);
 
+    //PDF
+    for (int i=0; i < MBIN; i++){
+      pdf += (binArray[i]);
+    }
+    printf("\n\n*************************\n");
+    printf("The PDF is %.2f\n", pdf);
+    printf("*************************\n\n");
 return 0;
 }
+
 
 int binContent(float randomNumber){
   int bin = 0;
@@ -74,3 +83,5 @@ int binContent(float randomNumber){
   }
   return bin;
 }
+
+//PDF 1/(B-A) where B=MAX A=MIN
