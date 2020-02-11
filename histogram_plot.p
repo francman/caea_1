@@ -24,4 +24,4 @@ set xlabel "x"
 set ylabel "Frequency"
 
 #count and plot
-plot "randomNumbers.dat" u (hist($1,width)):(1.0) smooth freq w boxes lc rgb"red" notitle
+plot "randomNumbers.dat" u (hist($1,width)):(1.0) smooth freq w boxes lc rgb"red" title "Histogram"

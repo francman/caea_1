@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#clean
+make clean
+
 #building C program
 make
 
@@ -7,4 +10,8 @@ make
 ./histogram
 
 #Plotting the data
-gnuplot plot.p
+gnuplot histogram_plot.p
+
+#Plotting pmf
+gnuplot pmf_plot.p
+gnuplot pmf_plot2.p
